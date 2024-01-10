@@ -5,11 +5,13 @@ import { User, onAuthStateChanged } from "firebase/auth";
 import { FIREBASE_AUTH } from "./FirebaseConfig";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import AppleHealthKit from "react-native-health";
 
 // Screens
 import Login from "./app/screens/Login";
 import Home from "./app/screens/Home";
 import Settings from "./app/screens/Settings";
+import appleHealthKit from "react-native-health";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -59,6 +61,8 @@ function BottomTabs() {
 }
 
 export default function App() {
+  appleHealthKit.isAvailable(()=> {});
+
   // Handle the state of the user so we don't have to manually track and navigate users to the right page
   const [user, setUser] = useState<User | null>(null);
 

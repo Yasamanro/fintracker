@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, Text, Button, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
 import { FIREBASE_AUTH } from "../../FirebaseConfig";
 
 export default function Settings() {
